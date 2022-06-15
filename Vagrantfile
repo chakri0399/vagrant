@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-   config.vm.provider "virtualbox" do |vb|
+   config.vm.provider "vmware_desktop" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
      vb.gui = true
   #
@@ -65,9 +65,6 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
    config.vm.provision "shell", inline: <<-SHELL
-     apt-get update
-     apt-get install -y apache2
-     apt-get install -y firefox
-     apt-get install -y python3-pip
+    echo "hello"
    SHELL
 end
